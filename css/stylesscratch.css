@@ -1,0 +1,66 @@
+/* Body styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background-color: #d0ebff; /* light blue */
+    color: #003366;
+}
+
+/* Navigation bar */
+.nav {
+    background-color: #003366;
+    padding: 10px;
+}
+
+.nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 40px;
+    background-color: #a6d8ff;
+}
+
+/* Content sections */
+.content {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+/* Highlighted text (for font color requirement) */
+.highlight {
+    color: #ff6600; /* basketball orange */
+}
+
+/* Video responsiveness */
+.video iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+}
+
+/* Tableau container */
+.tableauPlaceholder {
+    max-width: 100%;
+    margin: auto;
+}
+
+/* Footer (anchor link) */
+.footer {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.footer a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #003366;
+}
