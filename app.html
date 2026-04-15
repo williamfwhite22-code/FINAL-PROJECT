@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cup Guessing Game</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        padding-top: 50px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 50px;
+    }
+
+    .game {
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    .cups {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin: 30px 0;
+    }
+
+    .cup {
+        width: 100px;
+        height: 120px;
+        background: green;
+        border-radius: 0 0 50px 50px;
+        cursor: pointer;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        position: relative;
+        transition: transform 0.2s;
+    }
+
+    .cup:hover {
+        transform: scale(1.1);
+    }
+
+    .ball {
+        width: 30px;
+        height: 30px;
+        background: red;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -10px;
+        display: none;
+    }
+
+    #message {
+        font-size: 24px;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+    #score {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    #winMessage {
+        font-size: 28px;
+        color: green;
+        margin-top: 20px;
+        display: none;
+    }
+
+    .stats {
+        font-size: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        min-width: 150px;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="game">
+        <h1>Find the Ball!</h1>
+
+        <div class="cups">
+            <div class="cup" onclick="guess(1)">
+                <div class="ball" id="ball1"></div>
+            </div>
+            <div class="cup" onclick="guess(2)">
+                <div class="ball" id="ball2"></div>
+            </div>
+            <div class="cup" onclick="guess(3)">
+                <div class="ball" id="ball3"></div>
+            </div>
+        </div>
+
+        <div id="message"></div>
+        <div id="score">Score: 0 / 3</div>
+        <div id="winMessage">🎉 YOU WIN! 🎉</div>
+        <button onclick="resetGame()">Reset Game</button>
+    </div>
+
+    <div class="stats">
+        <div><strong>Attempts</strong></div>
+        <div id="attempts">0</div>
+    </div>
+
+</div>
+
+<script>
+    let ballPosition = Math.floor(Math.random() * 3) + 1;
+    let score = 0;
+    let attempts = 0;
+    let locked = false;
+
+    function hideBalls() {
+        document.getElementById("ball1").style.display = "none";
+        document.getElementById("ball2").style.display = "none";
+        document.getElementById("ball3").style.display = "none";
+    }
+
+    function showBall(position) {
+        document.getElementById("ball" + position).style.display = "block";
+    }
+
+    function guess(choice) {
+        if (locked || score >= 3) return;
+
+        locked = true;
+
+        attempts++;
+        document.getElementById("attempts").textContent = attempts;
+
+        if (choice === ballPosition) {
+            score++;
+            document.getElementById("message").textContent = "CORRECT!";
+        } else {
+            document.getElementById("message").textContent = "OOPS, TRY AGAIN";
+        }
+
+        document.getElementById("score").textContent = "Score: " + score + " / 3";
+
+        // Reveal ball
+        showBall(ballPosition);
+
+        if (score >= 3) {
+            document.getElementById("winMessage").style.display = "block";
+        }
+
+        setTimeout(() => {
+            hideBalls();
+            ballPosition = Math.floor(Math.random() * 3) + 1;
+            locked = false;
+        }, 1000);
+    }
+
+    function resetGame() {
+        score = 0;
+        attempts = 0;
+        ballPosition = Math.floor(Math.random() * 3) + 1;
+
+        document.getElementById("score").textContent = "Score: 0 / 3";
+        document.getElementById("attempts").textContent = "0";
+        document.getElementById("message").textContent = "";
+        document.getElementById("winMessage").style.display = "none";
+
+        hideBalls();
+        locked = false;
+    }
+</script>
+
+</body>
+</html>

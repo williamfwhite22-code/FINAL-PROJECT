@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Passion: Basketball</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#media">Media</a>
+        <a href="#graph">Stats</a>
+        <a href="professional.html">Back to Professional Page</a>
+    </nav>
+
+    <!-- Header -->
+    <header class="header" id="top">
+        <h1>My Passion: Basketball 🏀</h1>
+        <p>The game of skill, teamwork, and passion</p>
+    </header>
+
+    <!-- About Section -->
+    <section class="content" id="about">
+        <h2>About Basketball</h2>
+        <p>
+            Basketball is a fast-paced sport that requires teamwork, strategy, and athletic ability.
+            It’s one of my favorite activities because it combines competition with creativity.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="content" id="skills">
+        <h2>Basketball Skills</h2>
+
+        <ol>
+            <li>Offensive Skills
+                <ul>
+                    <li>Shooting</li>
+                    <li>Dribbling</li>
+                    <li>Passing</li>
+                </ul>
+            </li>
+            <li>Defensive Skills</li>
+            <li>Team Communication</li>
+        </ol>
+    </section>
+
+    <!-- Media Section -->
+    <section class="content" id="media">
+        <h2>Basketball Highlights</h2>
+
+        <img src="https://picsum.photos/400?basketball"
+             alt="Basketball on a court during a game">
+
+        <div class="video">
+            <iframe
+                src="https://www.youtube.com/embed/2hIrbnVx4k4"
+                title="Basketball Highlights"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Tableau Section -->
+    <section class="content" id="graph">
+        <h2>Basketball Stats Visualization</h2>
+
+        <p>
+            This visualization explores whether highly paid college basketball coaches
+            actually lead successful teams.
+        </p>
+
+        <div class='tableauPlaceholder' id='viz1776292681766' style='position: relative'>
+            <noscript>
+                <a href='#'>
+                    <img alt='College basketball coach salary visualization'
+                    src='https://public.tableau.com/static/images/NC/NCAABasketballSalaries/NCAABasketballSalaries/1_rss.png'
+                    style='border: none' />
+                </a>
+            </noscript>
+
+            <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https://public.tableau.com/' />
+                <param name='embed_code_version' value='3' />
+                <param name='name' value='NCAABasketballSalaries/NCAABasketballSalaries' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='no' />
+            </object>
+        </div>
+
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1776292681766');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+
+            if (divElement.offsetWidth > 800) {
+                vizElement.style.width = '100%';
+                vizElement.style.height = '800px';
+            } else {
+                vizElement.style.width = '100%';
+                vizElement.style.height = '1200px';
+            }
+
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+    </section>
+
+    <!-- Footer with Anchor -->
+    <div class="footer">
+        <a href="#top">⬆ Back to Top</a>
+    </div>
+
+</body>
+</html>
