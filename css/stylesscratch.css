@@ -10,7 +10,7 @@ body {
 
 /* THIS MUST BE OUTSIDE */
 .white-text {
-    color: white;
+    color: #333333;
 }
 /* Navigation bar */
 .nav {
